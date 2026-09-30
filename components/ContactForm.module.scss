@@ -1,0 +1,68 @@
+@use '../styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  span {
+    font-size: 14px;
+    color: $grey;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid $black;
+    border-radius: 0;
+    background: transparent;
+    outline: none;
+    resize: vertical;
+
+    &:focus {
+      border-bottom-width: 2px;
+      padding-bottom: 9px;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+    padding: 10px 28px;
+    border: 1px solid $black;
+    background: $black;
+    color: $white;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: $white;
+      color: $black;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+.error {
+  color: #b00020;
+  font-size: 14px;
+}
+
+.status {
+  font-size: 17px;
+}

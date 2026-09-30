@@ -1,0 +1,19 @@
+$white: #fff;
+$black: #000;
+$grey: #6b6b6b;
+$line: #e5e5e5;
+
+$gutter: clamp(16px, 3vw, 40px);
+$max-width: 1600px;
+
+$h1-size: clamp(22px, 2.2vw, 30px);
+
+$font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$bp-md: 768px;
+
+@mixin md-down {
+  @media (max-width: #{$bp-md - 1}) {
+    @content;
+  }
+}

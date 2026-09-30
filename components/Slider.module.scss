@@ -1,0 +1,85 @@
+@use '../styles/variables' as *;
+
+.slider {
+  margin: 0;
+}
+
+.viewport {
+  overflow: hidden;
+  outline: none;
+}
+
+.track {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-right: 24px; // gap stops the next slide bleeding in at the edge
+  aspect-ratio: 16 / 10;
+  background: $white;
+
+  img {
+    object-fit: contain;
+    object-position: left center;
+
+    @include md-down {
+      object-position: center;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dot,
+.dotActive {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid $black;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dotActive {
+  background: $black;
+}
+
+.arrows {
+  display: flex;
+  gap: 8px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid $black;
+    border-radius: 50%;
+    background: $white;
+    color: $black;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+}

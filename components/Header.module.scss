@@ -1,0 +1,37 @@
+@use '../styles/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-top: 28px;
+  padding-bottom: 48px;
+}
+
+.brand {
+  position: relative;
+  z-index: 20; // stays above the open mobile menu
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  width: auto;
+  height: 48px;
+}
+
+.name {
+  font-size: $h1-size;
+  line-height: 1.25;
+}
+
+.subheading {
+  color: $grey;
+  font-size: 14px;
+}

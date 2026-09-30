@@ -1,0 +1,29 @@
+@use '../../../styles/variables' as *;
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $gutter;
+  align-items: start;
+
+  @include md-down {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 17px;
+}
+
+.other {
+  margin-top: 24px;
+  color: $grey;
+}
+
+.contact > form {
+  max-width: 560px;
+}

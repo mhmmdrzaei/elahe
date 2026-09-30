@@ -1,0 +1,72 @@
+@use '../styles/variables' as *;
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toggle {
+  display: none;
+}
+
+@include md-down {
+  .toggle {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      margin-left: auto;
+      background: $black;
+      transition: transform 0.25s ease;
+    }
+  }
+
+  // Two lines cross into an X
+  .toggleOpen span:first-child {
+    transform: translateY(3.75px) rotate(45deg);
+  }
+
+  .toggleOpen span:last-child {
+    transform: translateY(-3.75px) rotate(-45deg);
+  }
+
+  .list {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 $gutter;
+    background: $white;
+    font-size: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s;
+  }
+
+  .listOpen {
+    opacity: 1;
+    visibility: visible;
+  }
+}
